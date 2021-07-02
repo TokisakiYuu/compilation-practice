@@ -1,3 +1,4 @@
+```
 Exp => AddExp
 
 AddExp => MulExp
@@ -10,5 +11,6 @@ MulExp => Atom
 
 Atom => num
       | (Exp)
+```
 
 优先级从低到高
