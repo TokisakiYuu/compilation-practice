@@ -1,9 +1,4 @@
-const sample = `((7 + 2) / 3) * 4`;
-// 2 * 6 / 4     Atom => (Atom)
-// 12 / 4        Rank1 => Atom * Rank1
-// 3             Rnak1 => Atom / Rank1
-// console.log(`sample: ${sample}`);
-
+// const sample = `((7 + 2) / 3) * 4`;
 
 function tokenizer(source) {
   return source.replace(/\s/g, "").split("");
