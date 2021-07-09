@@ -290,10 +290,12 @@ function executor(source, localVariables) {
 
 function prettyError(source) {
   return function printError(error) {
+    const { message, offset } = error;
+    const tab = offset === 0? "" : repeat(" ", offset - 1);
     console.log(
       `${source}\n`,
-      `${repeat(" ", error.offset - 1)}^\n`,
-      `${repeat(" ", error.offset - 1)}${error.message}`
+      `${tab}^\n`,
+      `${tab}${message}`
     );
   }
 }
@@ -303,7 +305,7 @@ function repeat(str, count) {
   return str + repeat(str, count - 1);
 }
 
-// const tokens = tokenizer(`let x = 3;y = 4; x = yy;`);
+// const tokens = tokenizer("y = 3;");
 // const ast = parser(tokens);
 // executor(ast, new Map());
 // console.log(JSON.stringify(ast, null, 4));
